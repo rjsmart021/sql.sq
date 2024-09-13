@@ -1,6 +1,23 @@
 #Module5Lesson3:Assignments Applying SQL in Python
 #1.Gym Database Management with Python and SQL
 #Task 1: Add a Member
+
+
+CREATE TABLE Members (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    age INT,
+);
+CREATE TABLE WorkoutSessions (
+    session_id INT PRIMARY KEY,
+    member_id INT,
+    session_date DATE,
+    session_time VARCHAR(50),
+    activity VARCHAR(255),
+    FOREIGN KEY (member_id) REFERENCES Members(id)
+);
+
+
     # Example code structure
 def add_member(id, name, age):
     INSERT INTO Members ('id','name','age')
